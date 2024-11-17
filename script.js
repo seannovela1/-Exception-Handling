@@ -17,8 +17,10 @@ function primitiveMultiply(a, b) { // 2. Define the primitiveMultiply function.
 }
 
 function reliableMultiply(a, b) {
-  // while (true) { // 7. Start an infinite loop to keep trying until it succeeds.
-    try { // 8. Attempt to call primitiveMultiply.
-      return primitiveMultiply(a, b); // 9. If successful, return the result.
-    } catch (e) { // 10. Catch any errors thrown by primitiveMultiply.
+  // while (true) { // 6. Start an infinite loop to keep trying until it succeeds.
+    try { // 7. Attempt to call primitiveMultiply.
+      return primitiveMultiply(a, b); // 8. If successful, return the result.
+    } catch (e) { // 9. Catch any errors thrown by primitiveMultiply.
+      if (!(e instanceof MultiplicatorUnitFailure)) { // 10. If the error is not a MultiplicatorUnitFailure, rethrow it.
+        throw e; // 11. Rethrow the error if it's not the one we're expecting.
 }
