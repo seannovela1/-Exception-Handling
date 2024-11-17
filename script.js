@@ -29,4 +29,5 @@ function reliableMultiply(a, b) {
     }
   }
 
-
+// Example usage to demonstrate the function.
+console.log(reliableMultiply(8, 8)); // Outputs 64 after a successful multiplication.
