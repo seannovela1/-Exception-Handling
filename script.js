@@ -23,4 +23,10 @@ function reliableMultiply(a, b) {
     } catch (e) { // 9. Catch any errors thrown by primitiveMultiply.
       if (!(e instanceof MultiplicatorUnitFailure)) { // 10. If the error is not a MultiplicatorUnitFailure, rethrow it.
         throw e; // 11. Rethrow the error if it's not the one we're expecting.
-}
+        throw e; // 11. Rethrow the error if it's not the one we're expecting.
+      }
+      // 12. If it is a MultiplicatorUnitFailure, the loop continues and tries again.
+    }
+  }
+
+
