@@ -6,16 +6,17 @@
 // Example Output:
 // console.log(reliableMultiply(8, 8)); // outputs 64
 
-class MultiplicatorUnitFailure extends Error {}
+class MultiplicatorUnitFailure extends Error {}  //1. Create a custom error class for specific failures
 
-function primitiveMultiply(a, b) {
-  if (Math.random() < 0.2) {
-    return a * b;
-  } else {
+function primitiveMultiply(a, b) { // 2. Define the primitiveMultiply function.
+  if (Math.random() < 0.2) {// 3. Simulate a 20% chance of success
+    return a * b; // 4. If we "succeed," return the product of a and b
+  } else { // 5. If we don't succeed, throw the error.
     throw new MultiplicatorUnitFailure("Klunk");
   }
 }
 
 function reliableMultiply(a, b) {
-  // Your code here.
+  // while (true) { // 7. Start an infinite loop to keep trying until it succeeds.
+    try { // 8. Attempt to call primitiveMultiply.
 }
